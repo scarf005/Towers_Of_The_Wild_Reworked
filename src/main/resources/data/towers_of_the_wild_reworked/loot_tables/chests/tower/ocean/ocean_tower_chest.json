@@ -2,6 +2,88 @@
   "type": "minecraft:chest",
   "pools": [
     {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:elytra",
+          "functions": [
+            {
+              "function": "minecraft:set_enchantments",
+              "enchantments": {
+                "minecraft:mending": {
+                  "type": "minecraft:binomial",
+                  "n": 20,
+                  "p": 0.5
+                },
+                "minecraft:unbreaking": {
+                  "type": "minecraft:binomial",
+                  "n": 20,
+                  "p": 0.5
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:binomial",
+        "n": 4,
+        "p": 0.8
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:firework_rocket",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Fireworks:{Flight:3b}}"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:binomial",
+                "n": 64,
+                "p": 0.7
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 60,
+              "treasure": true
+            }
+          ],
+          "name": "minecraft:book"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 60,
+              "treasure": true
+            }
+          ],
+          "name": "minecraft:heart_of_the_sea"
+        }
+      ]
+    },
+    {
       "rolls": {
         "min": 4.0,
         "max": 8.0,
@@ -77,30 +159,6 @@
           "type": "minecraft:item",
           "weight": 5,
           "name": "minecraft:compass"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 30,
-              "treasure": true
-            }
-          ],
-          "name": "minecraft:book"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 30,
-              "treasure": true
-            }
-          ],
-          "name": "minecraft:heart_of_the_sea"
         }
       ]
     },
